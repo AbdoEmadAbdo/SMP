@@ -1,0 +1,7 @@
+from pymongo import MongoClient
+def get_db_handle(FTKP_DB, localhost):
+
+ client = MongoClient(host=localhost)
+ db_handle = client['FTKP_DB']
+ 
+ return db_handle, client

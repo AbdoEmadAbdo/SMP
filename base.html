@@ -1,0 +1,36 @@
+
+<!-- {% include 'parts/navBar.html' %}  -->      <!-- el kool bewresoh -->
+
+
+{% load static %}   <!--    python manage.py collectstatic     To connect css  with  Html    !-->
+<link rel="stylesheet" href=" {% static 'css/style1.css' %} ">
+
+
+{% block content %}       <!-- el content beta3 el sofa7 (childes)     -->   
+
+
+<form method= "Post">    <!--  Post   3ashan sensitive  Data -->
+
+ {% csrf_token %}    <!--  Add for Security againest  CSRF attack    Put for Each {{FORM POST}} -->
+
+    <br>
+    <input type = "text"  name = "User-name"   placeholder = "Type User_name Here" required>
+    <br>
+    <input type = "Password"  name = "password"   placeholder = "Type Password Here" required>
+    <br>
+    <input type = "Email" name = "email" placeholder = "Type Email Here" required>
+    <br>
+    <input type = "submit" value = "Submit" > 
+    <br>
+    <input type = "Submit"  value = "Save" >
+
+
+{% endblock content %}
+</form>
+
+
+
+
+
+
+<!-- {% include 'parts/footer.html' %}     <!- el kool bewresoh -->
