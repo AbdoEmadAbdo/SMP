@@ -1,30 +1,23 @@
 absl-py==1.4.0
 appdirs==1.4.4
-asgiref @ file:///C:/ci_311/asgiref_1676448296195/work
 asttokens==2.1.0
 astunparse==1.6.3
 attrs==22.2.0
 autopep8==2.0.2
 backcall==0.2.0
-beautifulsoup4 @ file:///C:/ci_311/beautifulsoup4_1676424523303/work
 blinker==1.4
-Bottleneck @ file:///C:/ci_311/bottleneck_1676500016583/work
 brotlipy==0.7.0
 cachetools==5.3.0
-category-encoders @ file:///C:/ci_311/category_encoders_1678297277415/work
-certifi @ file:///C:/ci_311/certifi_1676421629969/work/certifi
-cffi @ file:///C:/ci_311/cffi_1676423759166/work
-chardet @ file:///C:/ci_311/chardet_1676436134885/work
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+
 colorama==0.4.6
 contourpy==1.0.7
-cryptography @ file:///C:/ci_311/cryptography_1676424563384/work
+
 cycler==0.11.0
 debugpy==1.6.3
 decorator==5.1.1
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
+
 dj-database-url==0.5.0
-Django==4.1
+Django==4.1.7
 django-allauth==0.52.0
 django-classy-tags==4.0.0
 django-cms==3.11.1
@@ -54,13 +47,14 @@ grpcio==1.51.3
 gunicorn==20.1.0
 h5py==3.8.0
 html5lib==1.1
-idna @ file:///C:/ci_311/idna_1676424932545/work
+
 install==1.3.5
 ipykernel==6.17.1
 ipython==8.6.0
 jax==0.4.6
 jedi==0.18.2
-joblib @ file:///C:/ci_311/joblib_1676433470200/work
+Jinja2==3.1.2
+
 jose==1.0.0
 jsonschema==4.17.1
 jupyter_client==7.4.7
@@ -75,14 +69,12 @@ MarkupSafe==2.1.2
 matplotlib==3.7.1
 matplotlib-inline==0.1.6
 mkl-fft==1.3.1
-mkl-random @ file:///C:/ci_311/mkl_random_1676481991689/work
+
 mkl-service==2.4.0
 mongoengine==0.27.0
 multitasking==0.0.11
 nest-asyncio==1.5.6
-numexpr @ file:///C:/ci_311_rebuilds/numexpr_1679001276672/work
-numpy @ file:///C:/ci_311/numpy_and_numpy_base_1676426421739/work
-oauthlib @ file:///C:/ci_311/oauthlib_1676443049979/work
+
 opt-einsum==3.3.0
 packaging==21.3
 pandas @ file:///C:/ci_311_rebuilds/pandas_1679004481142/work
