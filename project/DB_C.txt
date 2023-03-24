@@ -1,1 +1,0 @@
-{ "instantMongo": { "connections": [{ "name": "FTKP_DB", "uri": "" }] } }

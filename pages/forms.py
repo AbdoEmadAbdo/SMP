@@ -20,3 +20,33 @@ class SearchForm(forms.Form):
     
 
 
+
+
+from crispy_forms.helper import FormHelper  #defining a custom layout using the (FormHelper class) ,, and the (Layout, Submit, Row, and Column classes) from Django Crispy Forms.
+from crispy_forms.layout import Layout, Submit, Row, Column
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(label='Name')
+    email = forms.EmailField(label='Email')
+    message = forms.CharField(label='Message', widget=forms.Textarea)
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Row(
+                Column('name', css_class='form-group col-md-6 mb-0'),
+                Column('email', css_class='form-group col-md-6 mb-0'),
+                css_class='form-row'
+            ),
+            'message',
+            Submit('submit', 'Send Message')
+        )
+        self.helper.form_method = 'POST'
+        self.helper.form_action = 'contact'
+  
+  # in the HTML
+  #    {% csrf_token %}
+  #    {% crispy form %}  
+

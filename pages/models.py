@@ -33,14 +33,15 @@ class Customer(models.Model):
      customer_mobile = models.CharField(max_length=50)
      customer_address = models.CharField(max_length=50)
      customer_date = models.DateField(default=datetime.now)
-#     customer_time = models.TimeField(null=True)
+ #     customer_time = models.TimeField(null=True)
      
      
      def __str__(self):
           return self.customer_name
      
 
-     #if he Customer
+     
+#if he Customer
 class Login(models.Model):
      usernameL = models.CharField(max_length=50)
      passwordL = models.CharField(max_length=100)
@@ -48,6 +49,19 @@ class Login(models.Model):
      
      def __str__(self):
            return self.username
+ 
+ 
+class Company(models.Model):
+     name = models.CharField(max_length=50)
+     mobile = models.CharField(max_length=50)
+     location = models.CharField(max_length=50)
+     company_date = models.DateField(default=datetime.now)
+     #industry
+     
+ 
+ 
+ 
+ 
  
    
 '''

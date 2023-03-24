@@ -46,7 +46,7 @@ def index(request):
     return render(request, 'pages/index.html' , { 'lf': LoginForm } )
 
 
-def search_view(request):
+def search(request):
     query = request.GET.get('s')
     client = MongoClient()
     db = client['FTKP_DB']

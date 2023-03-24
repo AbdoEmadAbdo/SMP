@@ -1,5 +1,6 @@
 import os
-#from environ import Env
+#from environ import Env 
+#env = Env()
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +25,6 @@ INSTALLED_APPS = [
     
     
     
-    
     #'PredictionModel.apps.PredictionmodelConfig'
     'pages.apps.PagesConfig',
     
@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -69,16 +72,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-'''
+#'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#'''
 '''
-
-#env = Env()
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -92,7 +94,7 @@ DATABASES = {
         }
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

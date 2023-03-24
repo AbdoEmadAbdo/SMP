@@ -18,6 +18,8 @@ urlpatterns = [
     path('chart/',views.chart , name="chart"),
     path('Community/',views.Community , name="Community"),
     
+    path('search/', views.search, name='search'),
+    
 ]
 
 
