@@ -14,3 +14,9 @@ class LoginForm(forms.Form):
         model = Login
         fields= '__all__'
 
+
+class SearchForm(forms.Form):
+    query = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search'}))
+    
+
+

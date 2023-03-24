@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 from django.shortcuts import render
 from django.template import loader
 import plotly.express as px
@@ -43,6 +44,14 @@ def index(request):
     #  dataform.save()
 
     return render(request, 'pages/index.html' , { 'lf': LoginForm } )
+
+
+def search_view(request):
+    query = request.GET.get('s')
+    client = MongoClient()
+    db = client['FTKP_DB']
+    results = db.my_collection.find({'$text': {'$search': query}})
+    return render(request, 'search_results.html', {'results': results})
 
 
 def sign_in(request):

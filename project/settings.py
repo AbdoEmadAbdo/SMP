@@ -1,5 +1,5 @@
 import os
-
+#from environ import Env
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -69,25 +69,31 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 '''
+
+#env = Env()
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'FTKP_DB',
+        'NAME': os.environ.get('MONGO_DATABASE'),
+        'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': 'mongodb://localhost:27017',
+            'host': os.environ.get('MONGO_SERVER_CLUSTER_URL')
+        },
+        'OPTIONS': {
+            'db': 'mydatabase'
         }
     }
 }
-'''
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

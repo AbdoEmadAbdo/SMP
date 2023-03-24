@@ -115,20 +115,28 @@
                                     </div>
                             </li>
                         
-                            <!-- <li>
-                                <div class="search mt-2 p-relative">
-                                    <span>  <div class="search  ps-3  pe-3  d-none   d-lg-block">
-                                    </div>  </span>
-                                    <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
-                                </div>
-                            </li> -->
+                            
+                            {% comment %}
+                                <!-- <li>
+                                    <div class="search mt-2 p-relative">
+                                        <span>  <div class="search  ps-3  pe-3  d-none   d-lg-block">
+                                        </div>  </span>
+                                        <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
+                                    </div>
+                                </li> -->
+                            {% endcomment %}
+                                
                         </ul>
-                            <!--<div class="search  p-relative">
-                            <span>  <div class="search  ps-3  pe-3  d-none   d-lg-block">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div> <i class="fa-sharp fa-solid fa-magnifying-glass"></i> </span>
-                            <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
-                        </div>-->
+                       
+                       {% comment %}
+                             <!--<div class="search  p-relative">
+                             <span>  <div class="search  ps-3  pe-3  d-none   d-lg-block">
+                                 <i class="fa-solid fa-magnifying-glass"></i>
+                             </div> <i class="fa-sharp fa-solid fa-magnifying-glass"></i> </span>
+                             <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
+                         </div>-->
+                       {% endcomment %}
+                        
                         
                         <button class="navbar-toggler  bg-eee" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon ">
@@ -141,8 +149,8 @@
                                 <li>
                                     <nav class="navbar navbar-light bg-black ">
                                         <div class="container-fluid">
-                                            <form class="d-flex  w-100">
-                                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                            <form class="d-flex  w-100" method="get" action="{% url 'search' %}">
+                                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name='s'> 
                                                 <button class="btn btn-outline-success" type="submit">Search</button>
                                             </form>
                                         </div>
@@ -162,7 +170,7 @@
                                                     <i class=" fs-20   bi bi-brightness-high-fill between-flex align-center  " id="toggleDark">   </i> 
                                                     </a>
                                                 </li>
-                                                <li > <a class="dropdown-item between-flex active  fs-20" href="sign_in.html"> </a> </li>
+                                                <li > <a class="dropdown-item between-flex active  fs-20" href="{% url 'S_IN' %}"> </a> </li>
                                                 </ul>
                                         </div>
                                     </div>
@@ -181,7 +189,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="sign_in.html" class="btn mr-10 mt-2 btn  btn-primary  rounded-pill"> Login </a>
+                                    <a href="{% url 'S_IN' %}" class="btn mr-10 mt-2 btn  btn-primary  rounded-pill"> Login </a>
 
                                 </li>
                                 <li>
@@ -199,10 +207,14 @@
                     </div>
                 </div>
             </nav>
-                <!--<div class="search  p-relative">
-                    <span> <i class="fa-sharp fa-solid fa-magnifying-glass"></i> </span>
-                    <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
-                </div>-->
+         
+         {% comment %}
+                   <!--<div class="search  p-relative">
+                       <span> <i class="fa-sharp fa-solid fa-magnifying-glass"></i> </span>
+                       <input  class="p-10" type="search" name="search" id="search"  placeholder="search">
+                   </div>-->
+         {% endcomment %}
+            
                 
         </div>
         <!--  end head -->
@@ -264,88 +276,92 @@
             </div>-->
             <br>
             <div class="wrapper   d-grid   gap-20">
-                <!--  start  welcome  widget   
-                <div class="welcome      rad-10    text-center-mobile    block-mobile">
-                    <div class="intro   p-20   d-flex   space-between   bg-ccc">
-                        <div>
-                            <h2  class="m-0" > Welcome  </h2>
-                            <p class="c-gray    mt-5">  FINTEC APP.  </p>
-                        </div>
-                        <img src="{% static './images/welcome.png' %}" class="hide-mobile " alt="">
-                    </div>
-                    <img src="{% static './images/avatar.png' %}" class="avatar" alt="">
-                    <div class="body   text-center   d-flex   p-20   mt-20   mb-20    block-mobile">
-                        <div> mohmed ali <span class="d-block    c-gray    fs-14    mt-10"> Business Man </span> </div>
-                        <div>80 <span class="d-block    c-gray   fs-14    mt-10"> Stocs </span> </div>
-                        <div> $8500 <span class="d-block    c-gray    fs-14    mt-10"> Earned </span> </div>
-                    </div>
-                    <a href="profile.html" class="visit   d-block  fs-14    rad-6   bg-blue    w-fit    button-shape"  > profile  </a>
-                </div>
-                end  welcome  widget   -->
-
-                <!--  start   quick  widget   -
-                <div class="quick-draft   p-20     rad-10     ">
-                    <h2  class="mt-0    mb-20   ">  quick News </h2>
-                    <p class="mt-0   mb-20   c-gray   fs-15  "> write adraft for yours ideas.  </p>
-                    <form >
-                        <input type="text" class="d-block   mb-20   w-full   p-10   b-none   bg-eee    rad-6 " placeholder="title">
-                        <textarea class="d-block   mb-20   w-full   p-10   b-none   bg-eee    rad-6  "  placeholder="Your Thought" name="" id="" cols="30" rows="10"></textarea>
-                        <input  class="save   d-block    fs-14    bg-blue   c-white    b-none   w-fit  button-shape " type="submit" value="Save">
-                    </form>
-                </div>
-                <  end  quick   widget   -->
-
-                <!--  start tagets 
-                <div class="targets    p-20     rad-10 ">
-                    <h2  class="mt-0    mb-10"> Yearly Target  </h2>
-                    <p class="mt-0   mb-20   fs-15"> Tagets Of Years   </p>
-                    <div class="targets-row   mb-20      align-center   d-flex ">
-                        <div class="icon   center-flex    blue">
-                            <i class="fa-solid  fa-dollar  fa-lg   c-blue"></i>
-                        </div>
-                        <div class="details">
-                            <span class="fs-14    c-gray"> Money </span>
-                            <span class="d-block   mt-5   mb-10    fw-bold">  $YourMoney </span>
-                            <div class="progress   p-relative  blue">
-                                <span  class="bg-blue  " style="width:60%">
-                                    <span class="bg-blue  "> 64% </span>   
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="targets-row   mb-20    orange  align-center   d-flex ">
-                        <div class="icon   center-flex    blue">
-                            <i class="fa-solid fa-arrow-trend-up  orange  "></i>
-                        </div>
-                        <div class="details">
-                            <span class="fs-14    c-gray"> My Stocs </span>
-                            <span class="d-block   mt-5   mb-10     col-black  fw-bold">  StocsNoumber </span>
-                            <div class="progress   p-relative  blue">
-                                <span  class="bg-orange    orange " style="width:40%">
-                                    <span class="bg-orange  "> 34% </span>   
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="targets-row   mb-20   green   align-center   d-flex ">
-                        <div class="icon   center-flex    blue">
-                            <i class="fa-solid   fa-user  green     fa-lg   "></i>
-                        </div>
-                        <div class="details">
-                            <span class="fs-14    c-gray"> Teams </span>
-                            <span class="d-block   mt-5   mb-10  col-black   fw-bold">  TeamsNumber  </span>
-                            <div class="progress   p-relative  blue">
-                                <span  class="bg-green  green " style="width:70%">
-                                    <span class="bg-green  "> 75% </span>   
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            end  targets  -->
-                <!--  start    carousel  -->
+ 
+ {% comment %}
+                   <!--  start  welcome  widget   
+                   <div class="welcome      rad-10    text-center-mobile    block-mobile">
+                       <div class="intro   p-20   d-flex   space-between   bg-ccc">
+                           <div>
+                               <h2  class="m-0" > Welcome  </h2>
+                               <p class="c-gray    mt-5">  FINTEC APP.  </p>
+                           </div>
+                           <img src="{% static './images/welcome.png' %}" class="hide-mobile " alt="">
+                       </div>
+                       <img src="{% static './images/avatar.png' %}" class="avatar" alt="">
+                       <div class="body   text-center   d-flex   p-20   mt-20   mb-20    block-mobile">
+                           <div> mohmed ali <span class="d-block    c-gray    fs-14    mt-10"> Business Man </span> </div>
+                           <div>80 <span class="d-block    c-gray   fs-14    mt-10"> Stocs </span> </div>
+                           <div> $8500 <span class="d-block    c-gray    fs-14    mt-10"> Earned </span> </div>
+                       </div>
+                       #<a href="profile.html" class="visit   d-block  fs-14    rad-6   bg-blue    w-fit    button-shape"  > profile  </a>
+                   </div>
+                   end  welcome  widget   -->
+   
+                   <!--  start   quick  widget   -
+                   <div class="quick-draft   p-20     rad-10     ">
+                       <h2  class="mt-0    mb-20   ">  quick News </h2>
+                       <p class="mt-0   mb-20   c-gray   fs-15  "> write adraft for yours ideas.  </p>
+                       <form >
+                           <input type="text" class="d-block   mb-20   w-full   p-10   b-none   bg-eee    rad-6 " placeholder="title">
+                           <textarea class="d-block   mb-20   w-full   p-10   b-none   bg-eee    rad-6  "  placeholder="Your Thought" name="" id="" cols="30" rows="10"></textarea>
+                           <input  class="save   d-block    fs-14    bg-blue   c-white    b-none   w-fit  button-shape " type="submit" value="Save">
+                       </form>
+                   </div>
+                   <  end  quick   widget   -->
+   
+                   <!--  start tagets 
+                   <div class="targets    p-20     rad-10 ">
+                       <h2  class="mt-0    mb-10"> Yearly Target  </h2>
+                       <p class="mt-0   mb-20   fs-15"> Tagets Of Years   </p>
+                       <div class="targets-row   mb-20      align-center   d-flex ">
+                           <div class="icon   center-flex    blue">
+                               <i class="fa-solid  fa-dollar  fa-lg   c-blue"></i>
+                           </div>
+                           <div class="details">
+                               <span class="fs-14    c-gray"> Money </span>
+                               <span class="d-block   mt-5   mb-10    fw-bold">  $YourMoney </span>
+                               <div class="progress   p-relative  blue">
+                                   <span  class="bg-blue  " style="width:60%">
+                                       <span class="bg-blue  "> 64% </span>   
+                                   </span>
+                               </div>
+                           </div>
+                       </div>
+   
+                       <div class="targets-row   mb-20    orange  align-center   d-flex ">
+                           <div class="icon   center-flex    blue">
+                               <i class="fa-solid fa-arrow-trend-up  orange  "></i>
+                           </div>
+                           <div class="details">
+                               <span class="fs-14    c-gray"> My Stocs </span>
+                               <span class="d-block   mt-5   mb-10     col-black  fw-bold">  StocsNoumber </span>
+                               <div class="progress   p-relative  blue">
+                                   <span  class="bg-orange    orange " style="width:40%">
+                                       <span class="bg-orange  "> 34% </span>   
+                                   </span>
+                               </div>
+                           </div>
+                       </div>
+   
+                       <div class="targets-row   mb-20   green   align-center   d-flex ">
+                           <div class="icon   center-flex    blue">
+                               <i class="fa-solid   fa-user  green     fa-lg   "></i>
+                           </div>
+                           <div class="details">
+                               <span class="fs-14    c-gray"> Teams </span>
+                               <span class="d-block   mt-5   mb-10  col-black   fw-bold">  TeamsNumber  </span>
+                               <div class="progress   p-relative  blue">
+                                   <span  class="bg-green  green " style="width:70%">
+                                       <span class="bg-green  "> 75% </span>   
+                                   </span>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               end  targets  -->
+                   <!--  start    carousel  -->
+ {% endcomment %}
+    
             </div>
             <br>
             <br>
