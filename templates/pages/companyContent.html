@@ -31,8 +31,8 @@
 
         <div class="sidebar   p-15  p-relative ">
             <!--<h3  class="p-relative   text-center mt-0 pt-15" > 
-                <img src="./logo/logo/logo.png" class="one"   alt="">
-                <img src="../FRONT-END/imgs/logo (1)/logo/logo.png" class="two"  alt="">
+                <img src="{% static './logo/logo/logo.png' %}" class="one"   alt="">
+                <img src="{% static '../FRONT-END/imgs/logo (1)/logo/logo.png' %}" class="two"  alt="">
             </h3>-->
             <br>
             <br>
@@ -109,7 +109,7 @@
                             <li>
                                 <div>
                                     <h2 style="margin-top: 17px;"> <span style="color:yellow;">Fin</span><span style="color:dodgerblue ;">tickers</span> </h2>
-                                    <!--<img src="./images/logo (1)/logo/logo.png"  class="bg-black  logo p-relative" alt=""> -->
+                                    <!--<img src="{% static './images/logo (1)/logo/logo.png' %}"  class="bg-black  logo p-relative" alt=""> -->
                                     </div>
                             </li>
                         
@@ -219,7 +219,7 @@
             <br>
             <div class="companyContentChaned">
                 <div class="comanyDetails">
-                    <img src="./images/Amazon-Logo-Font-1-scaled.webp" width="50px" height="50px" style="border-radius: 50%;" alt="">
+                    <img src="{% static 'Amazon-Logo-Font-1-scaled.webp' %}" width="50px" height="50px" style="border-radius: 50%;" alt="">
                     <h3> companyName </h3>
 
                 </div>
@@ -316,7 +316,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <div class="info mb-5">
-                        <img src="./images/logo (1)/logo/logo.png" class="mb-4" alt="">
+                        <img src="{% static 'logo (1)/logo/logo.png' %}" class="mb-4" alt="">
                         <p class="mb-4 c-gray">
                             Hi! Welcome to our website we are happy to help you to learn about 
                             Finance and to provide you with best preditcion stocs algorithms.
@@ -399,30 +399,30 @@
     <!-- link to java-script file  -->
 
     <!--  api links  -->
-    <script src="./Api/AppleApi.js"></script> 
+    <script src="{% static 'Api/AppleApi.js' %}"></script> 
     
-    <!--- <script src="./Api/CIBApi.js"></script>
-    <script src="./Api/GoogleApi.js"></script>
-    <script src="./Api/TESLAApi.js"></script>
-    <script src="./Api/MICROSOFTApi.js"></script>
-    <script src="./Api/METAApi.js"></script>
-    <script src="./Api/AmazonApi.js"></script>
-    <script src="./Api/CIBApi.js"></script>
-    <script src="./Api/ELSWEDAYApi.js"></script>
-    <script src="./Api/WEApi.js"></script>
+    <!--- <script src="{% static './Api/CIBApi.js' %}"></script>
+    <script src="{% static './Api/GoogleApi.js' %}"></script>
+    <script src="{% static './Api/TESLAApi.js' %}"></script>
+    <script src="{% static './Api/MICROSOFTApi.js' %}"></script>
+    <script src="{% static './Api/METAApi.js' %}"></script>
+    <script src="{% static './Api/AmazonApi.js' %}"></script>
+    <script src="{% static './Api/CIBApi.js' %}"></script>
+    <script src="{% static './Api/ELSWEDAYApi.js' %}"></script>
+    <script src="{% static './Api/WEApi.js' %}"></script>
 
     -->
     
 
-    <script src="./Java-script/companydataonclick.js"></script>
-    <script src="./Java-script/companyContent.js"></script>
-    <script src="./Java-script/community.js"></script>
-    <script src="./Java-script/upbotton.js"></script>
+    <script src="{% static 'Java-script/companydataonclick.js' %}"></script>
+    <script src="{% static 'Java-script/companyContent.js' %}"></script>
+    <script src="{% static 'Java-script/community.js' %}"></script>
+    <script src="{% static 'Java-script/upbotton.js' %}"></script>
     <!---
-    <script src="./Java-script/Translation.js"></script> -->
-    <script src="./Java-script/main.js"></script>
-    <script src="./js/all.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'Java-script/Translation.js' %}"></script> -->
+    <script src="{% static 'Java-script/main.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
     
 </body>
