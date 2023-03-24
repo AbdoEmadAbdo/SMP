@@ -5,7 +5,7 @@ from datetime import datetime
 class User(models.Model):
       name= models.CharField(max_length=50)
       email=models.EmailField(unique=True ,max_length=100)
-      image = models.ImageField(upload_to='photos/%y/%m/%d' ,default='photos/1/1/2001/standardimg.png')
+      image = models.ImageField(upload_to='photos/%y/%m/%d' ,default='photos/1/1/2000/standardimg.png')
       status= models.BooleanField(default=True)
       createdAcc = models.DateTimeField(auto_now_add=True)
       
@@ -17,30 +17,45 @@ class User(models.Model):
 
 
 class Stocks(models.Model):
-
+     ticker = models.CharField(max_length=10)
      stock_name = models.CharField(unique=True ,max_length=50)
-     stock_price = models.DecimalField(max_digits=6,decimal_places=2 ,default=00.00)
-     stock_quantity = models.CharField(max_length=50)
+     date = models.DateTimeField(default=datetime.now)
+     open_price = models.FloatField(default=00.00)
+     high_price = models.FloatField(default=00.00)
+     low_price = models.FloatField(default=00.00)
+     close_price = models.FloatField(default=00.00)
+    
+     stock_quantity = models.IntegerField()
      stock_total = models.CharField(max_length=50)
      status= models.BooleanField(default=True)
      
      def __str__(self):
           return self.stock_name
 
+
+class Prediction(models.Model): 
+
+     stock = models.ForeignKey(Stocks, on_delete=models.RESTRICT) 
+     date = models.DateField() 
+     predicted_price = models.FloatField(default=00.00) 
+     actual_price = models.FloatField(null=True, blank=True)
+
 class Customer(models.Model):
      customer_name = models.CharField(max_length=50)
-     customer_email = models.EmailField(max_length=100)
-     customer_mobile = models.CharField(max_length=50)
-     customer_address = models.CharField(max_length=50)
-     customer_date = models.DateField(default=datetime.now)
+     email = models.EmailField(max_length=100)
+     mobile = models.CharField(max_length=50)
+     address = models.CharField(max_length=50)
+     EnterDate = models.DateTimeField(default=datetime.now)
  #     customer_time = models.TimeField(null=True)
      
      
      def __str__(self):
           return self.customer_name
      
+     class Meta:
+          ordering = ['-EnterDate']
 
-     
+
 #if he Customer
 class Login(models.Model):
      usernameL = models.CharField(max_length=50)
