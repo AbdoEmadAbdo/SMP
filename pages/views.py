@@ -163,10 +163,10 @@ def predict(request, ticker_value, number_of_days):
         number_of_days = int(number_of_days)
     except:
         return render(request, 'Invalid_Days_Format.html', {})
-#!    dataFrame
+ #!    dataFrame
     Valid_Ticker=pd.read_csv('Tickers.csv')
     
-# there is task here ====> 
+ # there is task here ====> 
     if ticker_value not in Valid_Ticker:
         return render(request, 'Invalid_Ticker.html', {})
     
@@ -272,7 +272,7 @@ def predict(request, ticker_value, number_of_days):
     # ========================================== Page Render section ==========================================
     
 
-    return render(request, "companys.html", context={ 'plot_div': plot_div, 
+    return render(request, "pages/companys.html", context={ 'plot_div': plot_div, 
                                                     'confidence' : confidence,
                                                     'forecast': forecast,
                                                     'ticker_value':ticker_value,
@@ -292,15 +292,21 @@ def predict(request, ticker_value, number_of_days):
                                                     })
 
 def LastNews(request):
-    return render(request, "LastNews.html")
+    return render(request, "pages/LastNews.html")
 
 def Trending(request):
-    return render(request, "Trending.html")
+    return render(request, "pages/Trending.html")
 
 def chart(request):
-    return render(request, "chart.html")
+    return render(request, "pages/chart.html")
 
 def Community(request):
-    return render(request, "Community.html")
+    return render(request, "pages/Community.html")
 
 
+
+#to render Jinja2 templates.    When the view is called, it will pass the my_data dictionary to the template, which will use the Jinja2 syntax to insert the name and age variables into the HTML output. 
+#                               The final result will be a rendered HTML page that displays the name and age of the user.
+def my_view(request):
+    my_data = {'name': 'John', 'age': 30}
+    return render(request, 'pages/my_template.html', my_data)
