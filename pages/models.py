@@ -5,7 +5,7 @@ from datetime import datetime
 class User(models.Model):
       name= models.CharField(max_length=50)
       email=models.EmailField(unique=True ,max_length=100)
-      image = models.ImageField(upload_to='photos/%y/%m/%d' ,default='photos/1/1/2000/standardimg.png')
+      image = models.ImageField(upload_to='photos/%y/%m/%d' ,default='std_prof_Img.png')     #'photos/1/1/2000/standardimg.png'
       status= models.BooleanField(default=True)
       createdAcc = models.DateTimeField(auto_now_add=True)
       
