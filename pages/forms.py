@@ -21,7 +21,6 @@ class SearchForm(forms.Form):
 
 
 
-
 from crispy_forms.helper import FormHelper  #defining a custom layout using the (FormHelper class) ,, and the (Layout, Submit, Row, and Column classes) from Django Crispy Forms.
 from crispy_forms.layout import Layout, Submit, Row, Column
 

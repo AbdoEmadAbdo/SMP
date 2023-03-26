@@ -16,29 +16,9 @@ class User(models.Model):
          ordering = ['-createdAcc']
 
 
-class Stocks(models.Model):
-     ticker = models.CharField(max_length=10)
-     stock_name = models.CharField(unique=True ,max_length=50)
-     date = models.DateTimeField(default=datetime.now)
-     open_price = models.FloatField(default=00.00)
-     high_price = models.FloatField(default=00.00)
-     low_price = models.FloatField(default=00.00)
-     close_price = models.FloatField(default=00.00)
-    
-     stock_quantity = models.IntegerField()
-     stock_total = models.CharField(max_length=50)
-     status= models.BooleanField(default=True)
-     
-     def __str__(self):
-          return self.stock_name
 
 
-class Prediction(models.Model): 
 
-     stock = models.ForeignKey(Stocks, on_delete=models.RESTRICT) 
-     date = models.DateField() 
-     predicted_price = models.FloatField(default=00.00) 
-     actual_price = models.FloatField(null=True, blank=True)
 
 class Customer(models.Model):
      customer_name = models.CharField(max_length=50)

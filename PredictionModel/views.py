@@ -21,6 +21,8 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, LSTM
 
+
+
 def prediction(ticker):
     global next_days 
     global day_step
@@ -130,7 +132,7 @@ def predict_next_day():
     #reshape the data into 3 dimintions due to lstm 
     actual_data = np.reshape (actual_data,(actual_data.shape[1],actual_data.shape[0],1))
     
-    saved_model=  pk.load(open('C:\Users\max\anaconda3\envs\stockmarket\StockMarketProject\PredictionModel\saved_data\saved_AAPL.sav', 'rb'))
+    saved_model=  pk.load(open('D:\ProgramData\Anaconda3\envs\SMP_Env\project\PredictionModel\saved_data\saved_AAPL.sav', 'rb'))
     #The next day Predicted Price  
     first_next_date = saved_model.predict(actual_data)
     #invers scaler
