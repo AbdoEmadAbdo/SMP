@@ -39,3 +39,21 @@ class RealTimePrice:
 
 Stock_symbol=RealTimePrice()
 print(Stock_symbol.real_time_price('AAPL'))
+
+
+
+
+
+
+
+
+
+#scrapes the current stock price for a given symbol from Yahoo Finance ::--
+
+def scrape_stock_price(symbol):
+    url = f'https://finance.yahoo.com/quote/{symbol}'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'html.parser')
+    price = soup.find('div', {'class': 'My(6px) Pos(r) smartphone_Mt(6px)'}).find('span').text
+    return float(price.replace(',', ''))
+

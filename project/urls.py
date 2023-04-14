@@ -16,16 +16,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls')) 
 """                                                         # new_F in each APP   urls.py  --- to connect app urls wwith proj urls
+
 from django.contrib import admin
 from django.urls import path, include   #
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')), 
-  #  path(),
-   # path(),
-  #  path(),
-] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)   # then inside your html files which need to appear your photos in :=
-
-#                                                                <img src="{{logo.png.url}}images/logo (1)/logo/logo.png" class="mb-4" alt="">    # "images/logo (1)/logo/logo.png"
+    path('ml_app/', include('PredictionModel.urls')),
+   
+   path('accounts/', include('django.contrib.auth.urls')), # Adding Django site authentication urls (for login, logout, password management)
+   
+   
+   
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)   #  inside your html files which need to appear your photos in :=
+#                                                                  <img src="{{logo.png.url}}images/logo (1)/logo/logo.png" class="mb-4" alt="">   # "images/logo (1)/logo/logo.png"
 

@@ -25,3 +25,20 @@ class Prediction(models.Model):
      date = models.DateField() 
      predicted_price = models.FloatField(default=00.00) 
      actual_price = models.FloatField(null=True, blank=True)
+     
+     
+class DataPoint(models.Model):
+    x = models.FloatField()
+    y = models.FloatField()
+
+class TrainedModel(models.Model):
+    coefficient = models.FloatField()
+    intercept = models.FloatField()
+    
+
+  
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    pass
+

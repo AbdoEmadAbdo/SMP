@@ -1,3 +1,5 @@
+#view to accept user input, train the linear regression model, and store the results in MongoDB
+
 from django.shortcuts import render
 import numpy as np
 import matplotlib.pyplot as plt
@@ -149,4 +151,51 @@ def plot_predicrtions():
 
 
 
+
+'''
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from sklearn.linear_model import LinearRegression
+from .models import DataPoint, TrainedModel
+
+@csrf_exempt
+def train_model(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        x_values = [point['x'] for point in data]
+        y_values = [point['y'] for point in data]
+
+        # Train the linear regression model
+        X = [[x] for x in x_values]
+        y = y_values
+        model = LinearRegression().fit(X, y)
+
+        # Store data points and trained model in MongoDB
+        DataPoint.objects.bulk_create([DataPoint(x=x, y=y) for x, y in zip(x_values, y_values)])
+        TrainedModel.objects.create(coefficient=model.coef_[0], intercept=model.intercept_)
+
+        return JsonResponse({'coefficient': model.coef_[0], 'intercept': model.intercept_})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+
+@csrf_exempt
+def predict(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        x = data['x']
+
+        # Load the trained model from MongoDB
+        model = TrainedModel.objects.first()
+        coefficient = model.coefficient
+        intercept = model.intercept
+
+        # Make a prediction
+        y = coefficient * x + intercept
+
+        return JsonResponse({'y': y})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
+'''
 

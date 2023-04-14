@@ -5,6 +5,7 @@ class LoginForm():
     password = forms.CharField(max_length=100)
     email = forms.EmailField(max_length=100 ,default='customer0@gmail.com')
 '''
+#!To create a form Directly for this model
 
 from django import forms
 from .models import Login
@@ -13,6 +14,12 @@ class LoginForm(forms.Form):
     class Meta:
         model = Login
         fields= '__all__'
+        
+   # roll_number = forms.IntegerField(
+   #                  help_text = "Enter 6 digit roll number"
+   #                  )
+   # password = forms.CharField(widget = forms.PasswordInput())
+
 
 
 class SearchForm(forms.Form):
@@ -23,6 +30,9 @@ class SearchForm(forms.Form):
 
 from crispy_forms.helper import FormHelper  #defining a custom layout using the (FormHelper class) ,, and the (Layout, Submit, Row, and Column classes) from Django Crispy Forms.
 from crispy_forms.layout import Layout, Submit, Row, Column
+
+
+
 
 
 class ContactForm(forms.Form):
@@ -44,6 +54,10 @@ class ContactForm(forms.Form):
         )
         self.helper.form_method = 'POST'
         self.helper.form_action = 'contact'
+  
+  
+  
+  
   
   # in the HTML
   #    {% csrf_token %}

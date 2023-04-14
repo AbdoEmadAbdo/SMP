@@ -17,15 +17,12 @@ class User(models.Model):
 
 
 
-
-
-
 class Customer(models.Model):
      customer_name = models.CharField(max_length=50)
      email = models.EmailField(max_length=100)
      mobile = models.CharField(max_length=50)
      address = models.CharField(max_length=50)
-     EnterDate = models.DateTimeField(default=datetime.now)
+     JoinedDate = models.DateTimeField(default=datetime.now)
  #     customer_time = models.TimeField(null=True)
      
      
@@ -73,6 +70,9 @@ class OrderItemStockCustomer(models.Model):
           return self.orderitemstockcustomer_name
 
   ''' 
+
+
+
 
 # IN    env\project\pages\templates\pages\index.html:
 
